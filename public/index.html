@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="text-center">
+      <h1 class="text-2xl font-bold my-5">simple request example</h1>
+      <button 
+      hx-get="/users" 
+      hx-trigger="click"
+      hx-target="#users"
+      hx-indicator="#loading"
+      hx-vals='{"limit":3}'
+      class="bg-blue-500 text-white p-2 m-3 rounded-lg">Fetch Users
+    </button>
+    <span class="htmx-indicator" id="loading">
+      <img src="img/loader.gif" alt="laoding" class="m-auto h-10">
+    </span>
+    </div>
+    <div id="users"
+    class="text-center"></div>
+  </body>
+</html>
