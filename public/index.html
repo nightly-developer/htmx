@@ -6,10 +6,18 @@
     <title>Document</title>
     <script defer src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
     <script defer src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+    <style type="text/tailwindcss">
+      @layer components {
+        .heading {
+          @apply text-sky-400/100 my-3 text-center py-3;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="text-center">
-      <h1 class="text-2xl font-bold my-5">simple request example</h1>
+      <h1 class="heading">simple request examples</h1>
       <button 
       hx-get="/users" 
       hx-trigger="click"
